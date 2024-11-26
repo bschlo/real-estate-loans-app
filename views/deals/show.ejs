@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= deal.name %></title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1><%= deal.name %></h1>
+    <ul>
+    <li>Address: <%= deal.address %></li>
+    <li>Loan Amount: <%= deal.loanAmount %></li>
+    <li>Number of Stories: <%= deal.stories %></li>
+    <li>Square Feet: <%= deal.squareFeet %></li>
+    <li>Interest Rate Type: <%= deal.rateType %></li>
+    <li>Minimum Rate: <%= deal.minRate %>%</li>
+    <li>Maximum Rate: <%= deal.maxRate %>%</li>
+    <li>Deal Type: <%= deal.dealType %></li>
+    <li>Recourse: <%= deal.recourse %></li>
+    <li>Developer / Owner: <%= deal.developer %></li>
+    <li>Broker Company: <%= deal.brokerCompany %></li>
+    <img src="<%= deal.image %>" alt="<%= deal.name %>">
+    </ul>
+    
+    <form action="/deal/<%= deal._id%>/?_method=DELETE" method="POST">
+      <button type="submit">Delete Deal</button>
+    </form>
+    <form action="/deal/<%= deal._id%>/edit" method="GET">
+        <button type="submit">Edit Deal</button>
+      </form>
+  </body>
+</html>

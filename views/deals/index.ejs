@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>My Deals</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="my-deals-parent">
+      <div id="my-deals-child">
+        <p>My Deals</p>
+      </div>
+    </div>
+    <div class="add-deal-nav">
+      <div class="add-deal-parent">
+        <div id="add-deal-child">
+          <a href="/deal/new">Add a New Deal</a>
+        </div>
+      </div>
+    </div>
+    <main>
+      <% deals.forEach((deal) => { %>
+        <article class="card"></article>
+        <div class="img-placeholder"><img src="<%= deal.image %>" alt="<%= deal.name %>"></div>
+        <div class="card-footer">
+        <a href="/deal/<%= deal._id %>">
+          <%= deal.name %> -------- <%=deal.loanAmount%></a>
+        </div>
+      <% }) %>
+    </article>
+    </main>
+  </body>
+</html>

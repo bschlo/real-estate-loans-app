@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap");
+
+body {
+  font-family: "STIX Two Text", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.my-deals-parent {
+  display: flex;
+  height: 100px;
+  padding-bottom: 20px;
+  margin: 0px 15px 10px 15px;
+  border-bottom: 2px solid black;
+}
+
+#my-deals-child {
+  font-size: 50px;
+}
+
+.add-deal-nav {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0px 20px 0px 0px;
+}
+
+.add-deal-parent {
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+#add-deal-child {
+  margin: 7px;
+}
+
+main {
+  background-color: white;
+  padding: 32px 72px;
+}
+
+.img-placeholder {
+  display: flex;
+  width: 355px;
+  height: 270px;
+  background-color: gray;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-placeholder img {
+  align-content: center;
+  width: 345px;
+  height: 260px;
+}
+
+.card-footer {
+  font-size: 14px;
+}
+
+.card-footer * {
+  margin-top: 8px;
+}
