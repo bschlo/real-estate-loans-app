@@ -4,16 +4,23 @@ const router = express.Router();
 import User from '../models/user.js';
 import Deal from '../models/deal.js';
 
+const userRequired = (req, res, next) => {
+    if (req.session.user) return next();
+    res.redirect('/auth');
+};  
+
+
 router.get('/', async (req, res) => {
-    const allDeals = await Deal.find({})
+    
+    const allDeals = await Deal.find({ owner: req.session.user._id })
     res.render('deals/index.ejs', { deals: allDeals})
 })
 
-router.get('/new', (req, res) => {
+router.get('/new', userRequired, (req, res) => {
     res.render('deals/new.ejs')
 })
 
-router.get('/:dealId', async (req, res) => {
+router.get('/:dealId', userRequired, async (req, res) => {
     try {
         const dealFound = await Deal.findById(req.params.dealId)
         res.render('deals/show.ejs', { deal: dealFound })    
@@ -22,7 +29,7 @@ router.get('/:dealId', async (req, res) => {
     }
 })
 
-router.get('/:dealId/edit', async (req, res) => {
+router.get('/:dealId/edit', userRequired, async (req, res) => {
     try {
         const dealFound = await Deal.findById(req.params.dealId)
         res.render('deals/edit.ejs', { deal: dealFound })    
@@ -31,7 +38,7 @@ router.get('/:dealId/edit', async (req, res) => {
     }
 })
 
-router.post('/', async (req, res) => {
+router.post('/', userRequired, async (req, res) => {
 try {
     const currentUser = req.session.user
     req.body.owner = currentUser._id
@@ -42,7 +49,7 @@ try {
 }
 })
 
-router.put('/:dealId', async (req, res) => {
+router.put('/:dealId', userRequired, async (req, res) => {
     const id = req.params.dealId
     const updateData = req.body
     const updatedDeal = await Deal.findByIdAndUpdate(id, updateData)
@@ -50,13 +57,10 @@ router.put('/:dealId', async (req, res) => {
 })
 
 
-router.delete('/:dealId', async (req, res) => {
+router.delete('/:dealId', userRequired, async (req, res) => {
     await Deal.findByIdAndDelete(req.params.dealId)
     res.redirect('/deal')
 })
-
-
-
 
 
 export default router

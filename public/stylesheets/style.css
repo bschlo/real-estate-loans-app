@@ -10,7 +10,7 @@ body {
   display: flex;
   height: 100px;
   padding-bottom: 20px;
-  margin: 0px 15px 10px 15px;
+  margin: 0px 65px 10px 65px;
   border-bottom: 2px solid black;
 }
 
@@ -21,7 +21,7 @@ body {
 .add-deal-nav {
   display: flex;
   flex-direction: row-reverse;
-  margin: 0px 20px 0px 0px;
+  
 }
 
 .add-deal-parent {
@@ -29,6 +29,7 @@ body {
   justify-content: center;
   border: 2px solid black;
   border-radius: 20px;
+  margin: 10px 65px 0px 65px;
 }
 
 #add-deal-child {
@@ -37,29 +38,40 @@ body {
 
 main {
   background-color: white;
-  padding: 32px 72px;
-}
-
-.img-placeholder {
+  padding: 32px 80px;
+  flex-direction: column;
   display: flex;
-  width: 355px;
-  height: 270px;
-  background-color: gray;
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  align-content: center;
+  
+}
+.card {
+  border: 2px solid black;
+  margin: 10px;
   border-radius: 8px;
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.img-placeholder img {
-  align-content: center;
+.card img {
   width: 345px;
   height: 260px;
+  margin: 8px;
+  border-radius: 8px;
+  border: 1px solid black;
 }
 
-.card-footer {
-  font-size: 14px;
+.deal-information {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-left: 15px;
+ 
 }
 
-.card-footer * {
-  margin-top: 8px;
+.deal-image {
+  display: flex;
+  flex-direction: row;
 }
