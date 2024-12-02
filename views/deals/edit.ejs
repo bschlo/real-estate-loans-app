@@ -104,30 +104,25 @@
             value="<%= deal.maxRate %>"
           />
         </li>
-
         <li>
-          <label for="dealType">Deal Type: </label>
-          <select name="dealType" id="dealType" value="<%= deal.dealType %>">
-            <option value="Acquisition">Acquisition</option>
-            <option value="Condo Inventory">Condo Inventory</option>
-            <option value="Construction">Construction</option>
-            <option value="Covered-Land">Covered-Land</option>
-            <option value="Office-to-Condo Conversion">
-              Office-to-Condo Conversion
-            </option>
-            <option value="Office-to-Multifamily Conversion">
-              Office-to-Multifamily Conversion
-            </option>
-            <option value="Refinance">Refinance</option>
-            <option value="TCO">TCO</option>
-          </select>
-        </li>
+            <label for="dealType">Deal Type: </label>
+            <select name="dealType" id="dealType">
+              <option value="Acquisition" <%= deal.dealType === 'Acquisition' ? 'selected' : '' %>>Acquisition</option>
+              <option value="Condo Inventory" <%= deal.dealType === 'Condo Inventory' ? 'selected' : '' %>>Condo Inventory</option>
+              <option value="Construction" <%= deal.dealType === 'Construction' ? 'selected' : '' %>>Construction</option>
+              <option value="Covered-Land" <%= deal.dealType === 'Covered-Land' ? 'selected' : '' %>>Covered-Land</option>
+              <option value="Office-to-Condo Conversion" <%= deal.dealType === 'Office-to-Condo Conversion' ? 'selected' : '' %>>Office-to-Condo</option>
+              <option value="Office-to-Multifamily Conversion" <%= deal.dealType === 'Office-to-Multifamily Conversion' ? 'selected' : '' %>>Office-to-Multifamily Conversion</option>
+              <option value="Refinance" <%= deal.dealType === 'Refinance' ? 'selected' : '' %>>Refinance</option>
+              <option value="TCO" <%= deal.dealType === 'TCO' ? 'selected' : '' %>>TCO</option>
+            </select>
+          </li>
 
         <li>
           <label for="recourse">Recourse: </label>
-          <select name="recourse" id="recourse" value="<%= deal.recourse %>">
-            <option value="Non-Recourse">Non-Recourse</option>
-            <option value="Recourse">Recourse</option>
+          <select name="recourse" id="recourse">
+            <option value="Non-Recourse" <%= deal.dealType === 'Non-Recourse' ? 'selected' : '' %>>Non-Recourse</option>
+            <option value="Recourse" <%= deal.dealType === 'Recourse' ? 'selected' : '' %>>Recourse</option>
           </select>
         </li>
 
@@ -152,11 +147,19 @@
         </li>
 
         <li>
+            <label for="notes">Notes: </label>
+            <textarea type="text" id="notes" name="notes"><%=deal.notes%></textarea>
+        </li>
+
+        <li>
           <label for="image">Upload Image: </label>
           <input type="text" id="image" name="image" value="<%=deal.image%>" />
         </li>
       </ul>
-      <button type="submit">Save Updated Deal</button>
+      <button type="submit" id="save-button">Save Updated Deal</button>
     </form>
+    <form action="/deal/<%= deal._id%>">
+        <button type="submit" id="go-back-button">Go Back To <%=deal.name%></button>
+      </form>
   </body>
 </html>

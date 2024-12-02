@@ -15,34 +15,32 @@
       </div>
     </div>
     <div class="add-deal-nav">
-        <div class="add-deal-parent">
-          <div id="add-deal-child">
-            <form action="/deal/new">
-                <button type="submit">Add New Deal</button>
-            </form>
-          </div>
+      <div class="add-deal-parent">
+        <div id="add-deal-child">
+          <form action="/deal/new">
+            <button type="submit">Add New Deal</button>
+          </form>
         </div>
-      </a>
+      </div>
     </div>
+    <!-- Fixed misplaced </a> -->
     <main>
       <% deals.forEach((deal)=> { %>
       <a href="/deal/<%= deal._id %>">
         <article class="card">
-          <div>
-            <div class="deal-information" id="deal-name">
-              <%= deal.name %>
-            </div>
+          <div class="deal-left">
+            <div class="deal-information" id="deal-name"><%= deal.name %></div>
             <div class="deal-information" id="deal-address">
               Address: <%= deal.address %>
             </div>
             <div class="deal-information" id="deal-asset-type">
-                Asset Type: <%= deal.assetType %>
-              </div>
+              Asset Type: <%= deal.assetType %>
+            </div>
             <div class="deal-information" id="deal-developer">
-              Developer / Owner: <%=deal.developer%>
+              Developer / Owner: <%= deal.developer %>
             </div>
             <div class="deal-information" id="deal-amount">
-              Loan Ask: <%=deal.loanAmount%>
+              Loan Ask: <%= deal.loanAmount %>
             </div>
             <div class="deal-information" id="deal-stories">
               Number of Stories: <%= deal.stories %>
@@ -65,6 +63,10 @@
             <div class="deal-information" id="deal-recourse">
               Recourse: <%= deal.recourse %>
             </div>
+          </div>
+          <div id="deal-notes">
+            <h2>Notes</h2>
+            <%= deal.notes %>
           </div>
           <div class="deal-image">
             <img src="<%= deal.image %>" alt="<%= deal.name %>" />

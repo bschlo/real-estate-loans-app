@@ -1,98 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/show.css" />
     <title>Create A New Deal</title>
-</head>
-<body>
-    <%- include('../partials/_navbar.ejs') %>  
-<h1>Create A New Deal</h1>
-<form action="/deal" method="POST">
-<ul>
-    <li>
-    <label for="name">Deal Name:</label>
-    <input type="text" name="name" id="name" />
-</li>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Create A New Deal</h1>
+    <form action="/deal" method="POST">
+      <ul>
+        <li>
+          <label for="name">Deal Name:</label>
+          <input type="text" name="name" id="name" />
+        </li>
 
-<li>
-    <label for="address">Address:</label>
-    <input type="text" name="address" id="address" />
-</li>
+        <li>
+          <label for="address">Address:</label>
+          <input type="text" name="address" id="address" />
+        </li>
 
-<li>
-    <label for="assetType">Asset Type:</label>
-    <input type="text" name="assetType" id="assetType" />
-</li>
+        <li>
+          <label for="assetType">Asset Type:</label>
+          <input type="text" name="assetType" id="assetType" />
+        </li>
 
-<li>
-    <label for="loanAmount">Loan Amount: </label>
-    <input type="text" name="loanAmount" id="loanAmount" />
-</li>
-<li>
-    <label for="stories">Stories: </label>
-    <input type="number" name="stories" id="stories" />
-</li>
-<li>
-    <label for="squareFeet">Building Square Feet: </label>
-    <input type="string" name="squareFeet" id="squareFeet" />
-</li>
-<li>
-    <label for="rateType">Rate Type:</label>
-    <select name="rateType" id="rateType">
-        <option value="Fixed">Fixed</option>
-        <option value="Floating Rate (SOFR)">Floating Rate (SOFR)</option>
-        <option value="Floating Rate (LIBOR)">Floating Rate (LIBOR)</option>
-        <option value="Floating Rate (1-YR Treasury)">Floating Rate (1-YR Treasury)</option>
-        <option value="Floating Rate (5-YR Treasury)">Floating Rate (5-YR Treasury)</option>
-        <option value="Floating Rate (10-YR Treasury)">Floating Rate (10-YR Treasury)</option>
-        <option value="Unknown">Unknown</option>
-    </select>
-</li>
-<li>
-    <label for="minRate">Minimum Interest Rate (%): </label>
-    <input type="number" name="minRate" id="minRate" />
-</li>
-<li>
-    <label for="maxRate">Maximum Interest Rate (%): </label>
-    <input type="number" name="maxRate" id="maxRate" />
-</li>
-<li>
-    <label for="dealType">Deal Type: </label>
-    <select name="dealType" id="dealType">
-        <option value="Acquisition">Acquisition</option>
-        <option value="Condo Inventory">Condo Inventory</option>
-        <option value="Construction">Construction</option>
-        <option value="Covered-Land">Covered-Land</option>
-        <option value="Office-to-Condo Conversion">Office-to-Condo Conversion</option>
-        <option value="Office-to-Multifamily Conversion">Office-to-Multifamily Conversion</option>
-        <option value="Refinance">Refinance</option>
-        <option value="TCO">TCO</option>
-    </select>
-</li>
-<li>
-    <label for="recourse">Recourse: </label>
-    <select name="recourse" id="recourse">
-        <option value="Non-Recourse">Non-Recourse</option>
-        <option value="Recourse">Recourse</option>
-    </select>
-</li>
-<li>
-    <label for="developer">Developer: </label>
-    <input type="developer" name="developer" id="developer" />
-</li>
-<li>
-    <label for="brokerCompany">Broker Company: </label>
-    <input type="brokerCompany" name="brokerCompany" id="brokerCompany" />
-</li>
-<li>
-    <label for="image">Upload Image (URL): </label>
-    <input type="text" id="image" name="image" />
-</li>
-</ul>
-    <button type="submit">Add Deal</button>
+        <li>
+          <label for="loanAmount">Loan Amount: </label>
+          <input type="text" name="loanAmount" id="loanAmount" />
+        </li>
+        <li>
+          <label for="stories">Stories: </label>
+          <input type="number" name="stories" id="stories" />
+        </li>
+        <li>
+          <label for="squareFeet">Building Square Feet: </label>
+          <input type="string" name="squareFeet" id="squareFeet" />
+        </li>
+        <li>
+          <label for="rateType">Rate Type:</label>
+          <select name="rateType" id="rateType">
+            <option value="Fixed">Fixed</option>
+            <option value="Floating Rate (SOFR)">Floating Rate (SOFR)</option>
+            <option value="Floating Rate (LIBOR)">Floating Rate (LIBOR)</option>
+            <option value="Floating Rate (1-YR Treasury)">
+              Floating Rate (1-YR Treasury)
+            </option>
+            <option value="Floating Rate (5-YR Treasury)">
+              Floating Rate (5-YR Treasury)
+            </option>
+            <option value="Floating Rate (10-YR Treasury)">
+              Floating Rate (10-YR Treasury)
+            </option>
+            <option value="Unknown">Unknown</option>
+          </select>
+        </li>
+        <li>
+          <label for="minRate">Minimum Interest Rate (%): </label>
+          <input type="number" name="minRate" id="minRate" />
+        </li>
+        <li>
+          <label for="maxRate">Maximum Interest Rate (%): </label>
+          <input type="number" name="maxRate" id="maxRate" />
+        </li>
+        <li>
+          <label for="dealType">Deal Type: </label>
+          <select name="dealType" id="dealType">
+            <option value="Acquisition">Acquisition</option>
+            <option value="Condo Inventory">Condo Inventory</option>
+            <option value="Construction">Construction</option>
+            <option value="Covered-Land">Covered-Land</option>
+            <option value="Office-to-Condo Conversion">
+              Office-to-Condo Conversion
+            </option>
+            <option value="Office-to-Multifamily Conversion">
+              Office-to-Multifamily Conversion
+            </option>
+            <option value="Refinance">Refinance</option>
+            <option value="TCO">TCO</option>
+          </select>
+        </li>
+        <li>
+          <label for="recourse">Recourse: </label>
+          <select name="recourse" id="recourse">
+            <option value="Non-Recourse">Non-Recourse</option>
+            <option value="Recourse">Recourse</option>
+          </select>
+        </li>
+        <li>
+          <label for="developer">Developer: </label>
+          <input type="developer" name="developer" id="developer" />
+        </li>
+        <li>
+          <label for="brokerCompany">Broker Company: </label>
+          <input type="brokerCompany" name="brokerCompany" id="brokerCompany" />
+        </li>
+        <li>
+          <label for="image">Upload Image (URL): </label>
+          <input type="text" id="image" name="image" />
+        </li>
 
-</form>
-</body>
+        <li>
+          <label for="notes">Notes: </label>
+          <textarea
+            type="text"
+            id="notes"
+            name="notes"
+            placeholder="Notes, Ideas, Follow Ups..."
+          ></textarea>
+        </li>
+      </ul>
+      <button type="submit">Add Deal</button>
+    </form>
+  </body>
 </html>

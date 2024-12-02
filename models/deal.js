@@ -75,6 +75,9 @@ const dealSchema = mongoose.Schema ({
     image: {
         type: String
     },
+    notes: {
+        type: String
+    },
     owner: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: "User" ,

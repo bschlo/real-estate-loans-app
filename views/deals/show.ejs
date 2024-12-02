@@ -9,34 +9,40 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <div class="main-container">
-    <h1><%= deal.name %></h1>
-    <div class="deal">
-      <div class="deal-picture">
-        <img src="<%= deal.image %>" alt="<%= deal.name %>" />
+      <h1><%= deal.name %></h1>
+      <div class="deal">
+        <div class="deal-picture">
+          <img src="<%= deal.image %>" alt="<%= deal.name %>" />
+        </div>
+        <div class="deal-notes-container">
+          <div class="deal-notes">
+            <h2>Notes:</h2>
+            <%= deal.notes %>
+          </div>
+        </div>
+        <div class="deal-information">
+          <ul>
+            <li>Address: <%= deal.address %></li>
+            <li>Asset Type: <%= deal.assetType %></li>
+            <li>Loan Amount: <%= deal.loanAmount %></li>
+            <li>Number of Stories: <%= deal.stories %></li>
+            <li>Square Feet: <%= deal.squareFeet %></li>
+            <li>Interest Rate Type: <%= deal.rateType %></li>
+            <li>Minimum Rate: <%= deal.minRate %>%</li>
+            <li>Maximum Rate: <%= deal.maxRate %>%</li>
+            <li>Deal Type: <%= deal.dealType %></li>
+            <li>Recourse: <%= deal.recourse %></li>
+            <li>Developer / Owner: <%= deal.developer %></li>
+            <li>Broker Company: <%= deal.brokerCompany %></li>
+          </ul>
+        </div>
       </div>
-      <div class="deal-information">
-        <ul>
-          <li>Address: <%= deal.address %></li>
-          <li>Asset Type: <%= deal.assetType %></li>
-          <li>Loan Amount: <%= deal.loanAmount %></li>
-          <li>Number of Stories: <%= deal.stories %></li>
-          <li>Square Feet: <%= deal.squareFeet %></li>
-          <li>Interest Rate Type: <%= deal.rateType %></li>
-          <li>Minimum Rate: <%= deal.minRate %>%</li>
-          <li>Maximum Rate: <%= deal.maxRate %>%</li>
-          <li>Deal Type: <%= deal.dealType %></li>
-          <li>Recourse: <%= deal.recourse %></li>
-          <li>Developer / Owner: <%= deal.developer %></li>
-          <li>Broker Company: <%= deal.brokerCompany %></li>
-        </ul>
-      </div>
-    </div>
-    <form action="/deal/<%= deal._id%>/edit" method="GET">
+      <form action="/deal/<%= deal._id%>/edit" method="GET">
         <button type="submit">Edit Deal</button>
       </form>
-    <form action="/deal/<%= deal._id%>/?_method=DELETE" method="POST">
-      <button type="submit">Delete Deal</button>
-    </form>
-</div>
+      <form action="/deal/<%= deal._id%>/?_method=DELETE" method="POST">
+        <button id="delete-button" type="submit">Delete Deal</button>
+      </form>
+    </div>
   </body>
 </html>

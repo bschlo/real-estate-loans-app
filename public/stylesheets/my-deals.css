@@ -43,9 +43,8 @@ button {
 }
 button:hover {
   color: blue;
-  cursor: pointer;  
+  cursor: pointer;
 }
-
 
 main {
   padding: 10px 80px;
@@ -54,7 +53,6 @@ main {
   flex-wrap: nowrap;
   justify-content: stretch;
   align-content: center;
-  
 }
 .card {
   border: 2px solid black;
@@ -73,12 +71,16 @@ main {
   border: 1px solid black;
 }
 
+.deal-left {
+  height: 260px;
+  width: 500px;
+}
+
 .deal-information {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   margin-left: 15px;
- 
 }
 
 #deal-name {
@@ -87,8 +89,12 @@ main {
   padding: 10px 0px 10px 0px;
 }
 
-
 .deal-image {
   display: flex;
   flex-direction: row;
+}
+
+#deal-notes {
+  align-items: left;
+  width: 275px;
 }
