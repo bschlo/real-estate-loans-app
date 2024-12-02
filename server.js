@@ -6,7 +6,6 @@ const app = express();
 import morgan from "morgan";
 import mongoose from "mongoose";
 import session from "express-session";
-import MongoStore from "connect-mongo";
 import methodOverride from "method-override";
 
 import isSignedIn from "./middleware/is-signed-in.js";
@@ -34,16 +33,12 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-     store: MongoStore.create({
-      mongoUrl: process.env.MONGODB_URI, // MongoDB URI
-      collectionName: "sessions", // optional, name of session collection
-    }),
   })
 );
-app.use(isSignedIn);
-app.use(passUserToView);
 
+app.use(passUserToView);
 app.use("/auth", authController);
+app.use(isSignedIn);
 app.use("/deal", dealController);
 
 app.get("/", (req, res) => {
