@@ -1,51 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/my-deals.css" />
     <title>My Deals</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <%- include('../partials/_navbar.ejs') %>
-        <div class="my-deals-parent">
-            <div id="my-deals-child">
-                <p>My Deals</p>
+    <div class="my-deals-parent">
+      <div id="my-deals-child">
+        <p>My Deals</p>
+      </div>
+    </div>
+    <div class="add-deal-nav">
+        <div class="add-deal-parent">
+          <div id="add-deal-child">
+            <form action="/deal/new">
+                <button type="submit">Add New Deal</button>
+            </form>
+          </div>
+        </div>
+      </a>
+    </div>
+    <main>
+      <% deals.forEach((deal)=> { %>
+      <a href="/deal/<%= deal._id %>">
+        <article class="card">
+          <div>
+            <div class="deal-information" id="deal-name">
+              <%= deal.name %>
             </div>
-        </div>
-        <div class="add-deal-nav">
-            <a href="/deal/new">
-                <div class="add-deal-parent">
-                    <div id="add-deal-child">
-                        Add a New Deal
-                    </div>
-                </div>
-            </a>
-        </div>
-        <main>
-            <% deals.forEach((deal)=> { %>
-                <a href="/deal/<%= deal._id %>">
-                    <article class="card">
-                        <div>
-                            <div class="deal-information" id="deal-name">
-                                <h1>
-                                    <%= deal.name %>
-                                </h1>
-                            </div>
-                            <div class="deal-information" id="deal-developer">Developer / Owner: <%=deal.developer%>
-                            </div>
-                        <div class="deal-information" id="deal-amount">Loan Ask: <%=deal.loanAmount%>
-                        </div>
-                        </div>
-                        <div class="deal-image">
-                            <img src="<%= deal.image %>" alt="<%= deal.name %>">
-                        </div>
-                    </article>
-                </a>
-                <% }) %>
-        </main>
-</body>
-
+            <div class="deal-information" id="deal-address">
+              Address: <%= deal.address %>
+            </div>
+            <div class="deal-information" id="deal-asset-type">
+                Asset Type: <%= deal.assetType %>
+              </div>
+            <div class="deal-information" id="deal-developer">
+              Developer / Owner: <%=deal.developer%>
+            </div>
+            <div class="deal-information" id="deal-amount">
+              Loan Ask: <%=deal.loanAmount%>
+            </div>
+            <div class="deal-information" id="deal-stories">
+              Number of Stories: <%= deal.stories %>
+            </div>
+            <div class="deal-information" id="deal-squareFeet">
+              Square Feet: <%= deal.squareFeet %>
+            </div>
+            <div class="deal-information" id="deal-rateType">
+              Interest Rate Type: <%= deal.rateType %>
+            </div>
+            <div class="deal-information" id="deal-minRate">
+              Minimum Rate: <%= deal.minRate %>%
+            </div>
+            <div class="deal-information" id="deal-maxRate">
+              Maximum Rate: <%= deal.maxRate %>%
+            </div>
+            <div class="deal-information" id="deal-dealType">
+              Deal Type: <%= deal.dealType %>
+            </div>
+            <div class="deal-information" id="deal-recourse">
+              Recourse: <%= deal.recourse %>
+            </div>
+          </div>
+          <div class="deal-image">
+            <img src="<%= deal.image %>" alt="<%= deal.name %>" />
+          </div>
+        </article>
+      </a>
+      <% }) %>
+    </main>
+  </body>
 </html>

@@ -4,12 +4,13 @@ body {
   font-family: "STIX Two Text", serif;
   font-optical-sizing: auto;
   font-style: normal;
+  background: white;
 }
 
 .my-deals-parent {
   display: flex;
   height: 100px;
-  padding-bottom: 20px;
+  padding: 0px 0px 20px 0px;
   margin: 0px 65px 10px 65px;
   border-bottom: 2px solid black;
 }
@@ -21,24 +22,33 @@ body {
 .add-deal-nav {
   display: flex;
   flex-direction: row-reverse;
-  
+  margin: 20px 0px 0px 0px;
 }
 
 .add-deal-parent {
   display: flex;
   justify-content: center;
-  border: 2px solid black;
-  border-radius: 20px;
-  margin: 10px 65px 0px 65px;
+  margin: 10px 65px 10px 65px;
+  font-weight: bold;
 }
 
-#add-deal-child {
-  margin: 7px;
+button {
+  height: 30px;
+  width: 120px;
+  border-radius: 15px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  margin: 10px;
 }
+button:hover {
+  color: blue;
+  cursor: pointer;  
+}
+
 
 main {
-  background-color: white;
-  padding: 32px 80px;
+  padding: 10px 80px;
   flex-direction: column;
   display: flex;
   flex-wrap: nowrap;
@@ -70,6 +80,13 @@ main {
   margin-left: 15px;
  
 }
+
+#deal-name {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px 0px 10px 0px;
+}
+
 
 .deal-image {
   display: flex;

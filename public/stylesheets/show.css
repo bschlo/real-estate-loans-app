@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap");
+
+body {
+  font-family: "STIX Two Text", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background: white;
+}
+
+
+.main-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.deal {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.deal-picture img {
+    height: 400px;
+    width: 450px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin: 18px;
+}
+
+button {
+    height: 30px;
+    width: 600px;
+    border-radius: 15px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    margin: 10px;
+}
+button:hover {
+    color: blue;
+    cursor: pointer;  
+}
+
+a:link, a:visited {
+    color: rgba(5, 10, 55, 0.927); 
+    text-decoration: none; 
+  }
+a:hover {
+    color: blue;
+    cursor: pointer;
+    
+}

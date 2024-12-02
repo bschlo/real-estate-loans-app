@@ -9,6 +9,10 @@ const dealSchema = mongoose.Schema ({
         type: String,
         required: true,
     },
+    assetType: {
+        type: String,
+        required: true,
+    },
     loanAmount: { 
         type: String,
         required: true,

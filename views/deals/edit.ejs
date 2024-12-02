@@ -1,76 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Document</title>
-</head>
-<body>
-    <%- include('../partials/_navbar.ejs') %>  
-    <h1>Create A New Deal</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/show.css" />
+    <title>Edit <%= deal.name %></title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit <%= deal.name %></h1>
     <form action="/deal" method="PUT">
-        <label for="name">Deal Name: </label>
-        <input type="text" name="name" id="name" value="<%= deal.name %>" />
-    
-        <label for="address">Address:</label>
-        <input type="text" name="address" id="address" value="<%= deal.address %>"/>
-    
-        <label for="loanAmount">Loan Amount: </label>
-        <input type="text" name="loanAmount" id="loanAmount" value="<%= deal.loanAmount %>"/>
-    
-        <label for="stories">Stories: </label>
-        <input type="number" name="stories" id="stories" value="<%= deal.stories %>" />
-    
-        <label for="squareFeet">Building Square Feet: </label>
-        <input type="string" name="squareFeet" id="squareFeet" value="<%= deal.squareFeet %>"/>
-    
-        <label for="rateType">Rate Type:</label>
-        <select name="rateType" id="rateType" value="<%= deal.rateType %>">
+      <ul>
+        <li>
+          <label for="name">Deal Name: </label>
+          <input type="text" name="name" id="name" value="<%= deal.name %>" />
+        </li>
+
+        <li>
+          <label for="address">Address:</label>
+          <input
+            type="text"
+            name="address"
+            id="address"
+            value="<%= deal.address %>"
+          />
+        </li>
+
+        <li>
+            <label for="assetType">Asset Type:</label>
+            <input
+              type="text"
+              name="assetType"
+              id="assetType"
+              value="<%= deal.assetType %>"
+            />
+          </li>
+
+        <li>
+          <label for="loanAmount">Loan Amount: </label>
+          <input
+            type="text"
+            name="loanAmount"
+            id="loanAmount"
+            value="<%= deal.loanAmount %>"
+          />
+        </li>
+
+        <li>
+          <label for="stories">Stories: </label>
+          <input
+            type="number"
+            name="stories"
+            id="stories"
+            value="<%= deal.stories %>"
+          />
+        </li>
+
+        <li>
+          <label for="squareFeet">Building Square Feet: </label>
+          <input
+            type="string"
+            name="squareFeet"
+            id="squareFeet"
+            value="<%= deal.squareFeet %>"
+          />
+        </li>
+
+        <li>
+          <label for="rateType">Rate Type:</label>
+          <select name="rateType" id="rateType" value="<%= deal.rateType %>">
             <option value="Fixed">Fixed</option>
             <option value="Floating Rate (SOFR)">Floating Rate (SOFR)</option>
             <option value="Floating Rate (LIBOR)">Floating Rate (LIBOR)</option>
-            <option value="Floating Rate (1-YR Treasury)">Floating Rate (1-YR Treasury)</option>
-            <option value="Floating Rate (5-YR Treasury)">Floating Rate (5-YR Treasury)</option>
-            <option value="Floating Rate (10-YR Treasury)">Floating Rate (10-YR Treasury)</option>
+            <option value="Floating Rate (1-YR Treasury)">
+              Floating Rate (1-YR Treasury)
+            </option>
+            <option value="Floating Rate (5-YR Treasury)">
+              Floating Rate (5-YR Treasury)
+            </option>
+            <option value="Floating Rate (10-YR Treasury)">
+              Floating Rate (10-YR Treasury)
+            </option>
             <option value="Unknown">Unknown</option>
-        </select>
-    
-        <label for="minRate">Minimum Interest Rate (%): </label>
-        <input type="number" name="minRate" id="minRate" value="<%= deal.minRate %>" />
-    
-        <label for="maxRate">Maximum Interest Rate (%): </label>
-        <input type="number" name="maxRate" id="maxRate" value="<%= deal.maxRate %>" />
-    
-        <label for="dealType">Deal Type: </label>
-        <select name="dealType" id="dealType" value="<%= deal.dealType %>">
+          </select>
+        </li>
+
+        <li>
+          <label for="minRate">Minimum Interest Rate (%): </label>
+          <input
+            type="number"
+            name="minRate"
+            id="minRate"
+            value="<%= deal.minRate %>"
+          />
+        </li>
+
+        <li>
+          <label for="maxRate">Maximum Interest Rate (%): </label>
+          <input
+            type="number"
+            name="maxRate"
+            id="maxRate"
+            value="<%= deal.maxRate %>"
+          />
+        </li>
+
+        <li>
+          <label for="dealType">Deal Type: </label>
+          <select name="dealType" id="dealType" value="<%= deal.dealType %>">
             <option value="Acquisition">Acquisition</option>
             <option value="Condo Inventory">Condo Inventory</option>
             <option value="Construction">Construction</option>
             <option value="Covered-Land">Covered-Land</option>
-            <option value="Office-to-Condo Conversion">Office-to-Condo Conversion</option>
-            <option value="Office-to-Multifamily Conversion">Office-to-Multifamily Conversion</option>
+            <option value="Office-to-Condo Conversion">
+              Office-to-Condo Conversion
+            </option>
+            <option value="Office-to-Multifamily Conversion">
+              Office-to-Multifamily Conversion
+            </option>
             <option value="Refinance">Refinance</option>
             <option value="TCO">TCO</option>
-        </select>
-        
-        <label for="recourse">Recourse: </label>
-        <select name="recourse" id="recourse" value="<%= deal.recourse %>">
+          </select>
+        </li>
+
+        <li>
+          <label for="recourse">Recourse: </label>
+          <select name="recourse" id="recourse" value="<%= deal.recourse %>">
             <option value="Non-Recourse">Non-Recourse</option>
             <option value="Recourse">Recourse</option>
-        </select>
-    
-        <label for="developer">Developer: </label>
-        <input type="developer" name="developer" id="developer" value="<%= deal.developer %>"/>
-    
-        <label for="brokerCompany">Broker Company: </label>
-        <input type="brokerCompany" name="brokerCompany" id="brokerCompany" value="<%= deal.brokerCompany %>" />
-    
-        <label for="image">Upload Image: </label>
-        <input type="text" id="image" name="image" value="<%=deal.image%>"/>
-    
-    
-        <button type="submit">Save Updated Deal</button>
+          </select>
+        </li>
+
+        <li>
+          <label for="developer">Developer: </label>
+          <input
+            type="developer"
+            name="developer"
+            id="developer"
+            value="<%= deal.developer %>"
+          />
+        </li>
+
+        <li>
+          <label for="brokerCompany">Broker Company: </label>
+          <input
+            type="brokerCompany"
+            name="brokerCompany"
+            id="brokerCompany"
+            value="<%= deal.brokerCompany %>"
+          />
+        </li>
+
+        <li>
+          <label for="image">Upload Image: </label>
+          <input type="text" id="image" name="image" value="<%=deal.image%>" />
+        </li>
+      </ul>
+      <button type="submit">Save Updated Deal</button>
     </form>
-</body>
+  </body>
 </html>
