@@ -50,7 +50,7 @@ router.post("/", userRequired, async (req, res) => {
 router.put("/:dealId", userRequired, async (req, res) => {
   const id = req.params.dealId;
   const updateData = req.body;
-  const updatedDeal = await Deal.findByIdAndUpdate(id, updateData);
+  await Deal.findByIdAndUpdate(id, updateData);
   res.redirect("/deal");
 });
 

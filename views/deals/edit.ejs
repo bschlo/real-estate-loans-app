@@ -9,7 +9,7 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Edit <%= deal.name %></h1>
-    <form action="/deal" method="PUT">
+    <form action="/deal/<%= deal._id %>/?_method=PUT" method="POST">
       <ul>
         <li>
           <label for="name">Deal Name: </label>
