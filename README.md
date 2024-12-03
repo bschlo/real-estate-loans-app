@@ -16,33 +16,33 @@ GitHub Repository: https://github.com/bschlo/real-estate-loans-app
 
 Load In
 
-![Load In](<Screenshot 2024-12-02 at 2.56.13 PM.png>)
+![Load In](./README%20Pictures/Screenshot%202024-12-02%20at%202.56.13 PM.png)
 
 Sign Up
 
-![Sign-Up](image.png)
+![Sign-Up](./README%20Pictures/image.png)
 
 Sign In
 
-![Sign-In](image-1.png)
+![Sign-In](./README%20Pictures/image-1.png)
 
 Welcome Page
 
-![Welcome Page](image-2.png)
+![Welcome Page](./README%20Pictures/image-2.png)
 
 My Deals
 
-![My Deals](image-3.png)
+![My Deals](./README%20Pictures/image-3.png)
 
 Create A New Deal
 
-![Create A New Deal](image-4.png)
+![Create A New Deal](./README%20Pictures/image-4.png)
 
-View A Deal ![View A Deal](image-5.png)
+View A Deal ![View A Deal](./README%20Pictures/image-5.png)
 
 Edit A Deal
 
-![Edit A Deal](image-7.png)
+![Edit A Deal](./README%20Pictures/image-7.png)
 
 ## User Stories: 
 
@@ -65,7 +65,7 @@ Stretch Goals
 
 ## ERD
 
-![ERD](image-9.png)
+![ERD](./README%20Pictures/image-9.png)
 
 ## Restful Routes
 
