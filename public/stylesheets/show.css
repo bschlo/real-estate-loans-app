@@ -13,6 +13,14 @@ body {
   flex-direction: column;
 }
 
+.create-deal {
+    margin: 0px 0px 0px 60px
+}
+
+.edit-deal {
+    margin: 0px 0px 0px 60px
+}
+
 .deal {
   display: flex;
   justify-content: center;

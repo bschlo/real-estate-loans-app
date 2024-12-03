@@ -8,6 +8,7 @@
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
+    <div class="edit-deal">
     <h1>Edit <%= deal.name %></h1>
     <form action="/deal/<%= deal._id %>/?_method=PUT" method="POST">
       <ul>
@@ -161,5 +162,6 @@
     <form action="/deal/<%= deal._id%>">
         <button type="submit" id="go-back-button">Go Back To <%=deal.name%></button>
       </form>
+    </div>
   </body>
 </html>
